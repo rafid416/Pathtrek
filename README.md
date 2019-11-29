@@ -78,6 +78,7 @@ npm start  then proceed to http://localhost:8080/ on your local browser
 * passport.js
 * nodemailer
 * moment.js
+* API integration
 * cloudinary
 * geocoder
 * connect-flash
