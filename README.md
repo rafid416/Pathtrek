@@ -3,7 +3,7 @@
 
 ## Live Demo
 
-To view the app, go to [https://pathtrek.herokuapp.com](https://https://pathtrek.herokuapp.com)
+To view the app, go to [https://pathtrek.herokuapp.com/](https://pathtrek.herokuapp.com/)
 > You can enter the following credentails to test drive the app with its full features:
   * Username: rafid
   * Email: rafid@rafid.com
