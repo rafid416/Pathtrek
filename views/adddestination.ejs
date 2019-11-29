@@ -1,0 +1,32 @@
+
+<% include partials/header2 %>
+
+    <div class="container adestcont">
+        <h1 class="text-center my-5">Create New Destination</h1>
+        <div class="row justify-content-center mb-5">
+            <div class="col-md-6 col-8">
+                <form action="/destinations" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input class="form-control py-3" type="text" name="destination[name]" placeholder="destination name">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image</label>
+                        <input class="form-control" type="file" id="image" name="image" accept="image/*" required style="padding:0;height:auto;">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="5" name="destination[description]" placeholder="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input class="form-control" type="text" name="destination[location]" id="location" placeholder="Yosemite National Park, CA">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                    </div>
+                </form>
+                <a href="/destinations" class="">Go Back</a>
+            </div>
+        </div>
+    </div>
+
+    <% include partials/footer4 %>

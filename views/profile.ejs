@@ -1,0 +1,107 @@
+<% include partials/header1 %>
+
+    <div class="container text-center pcont mb-5">
+        <div class="row my-5 justify-content-center">
+            <div class="col-md-4 col-sm-4 col-8">
+                <div class="card mb-5">
+                    <% if (currentUser.image){ %>
+                    <img src='<%= user.image %>' class="card-img-top" alt="...">
+                    <% } else { %>
+                    <img src="/images/empty.png" class="card-img-top" alt="...">
+                    <% } %>
+                    <a style="cursor:pointer;" class="text-primary"><i class="far fa-image float-left" data-toggle="modal" data-target="#updateimage" style="font-size:1.3em;" ></i></a>
+                    <div class="card-body">
+                        <h5 class="card-title">Profile Details:</h5>
+                    </div>
+                    <ul class="list-group list-group-flush text-left">  
+                        <li class="list-group-item h6">Username: <%= user.username %><a style="cursor:pointer;" class="text-primary"><i class="fas fa-edit float-right" data-toggle="modal" data-target="#updateusername" ></i></a></li>
+                        <li class="list-group-item h6 ">Email: <%= user.email %> <a style="cursor:pointer;" class="text-primary"><i class="fas fa-edit float-right" data-toggle="modal" data-target="#updateemail" ></i></a></li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="/logout" class="card-link btn btn-danger ">Logout</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 col-8 col-md-8">
+                <p class="h5 mb-5 text-white"><%= user.username %>'s submitted destinations</p>
+                <div class="row mb-4 ">
+                    <%destinations.forEach(function(destination) { %>
+                    <div class="col-md-4 col-sm-6 colspace">
+                        <div class="card"style="border:unset;">
+                            <img src="<%= destination.image %>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title"><%= destination.name %></h5>
+                                <a href="/destinations/<%= destination._id %>" class="btn btn-primary btn-sm">More Info</a>
+                            </div>
+                        </div>                   
+                    </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="updateusername" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: aliceblue;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateusername">Update your username</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/usernameupdate" method="POST">
+                    <div class="modal-body">
+                        <input type="text" name="newuname" class="mb-2"placeholder="enter new username" required style="width:100%;"><br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" name="submit" class="btn btn-primary">update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="updateemail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: aliceblue;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateemail">Update your email</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/profile/emailupdate" method="POST">
+                    <div class="modal-body">
+                        <input type="email" name="newemail" class="mb-2"placeholder="enter new email" required style="width:100%;"><br>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" name="submit" class="btn btn-primary">update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="updateimage" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: aliceblue;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updateimage">Update your profile Image</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/imageupdate" method="POST" enctype="multipart/form-data" > 
+                    <div class="modal-body">
+                        <input type="file" name="image" id="file" class="mb-2" required style="width:100%;"><br>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" name="submit" class="btn btn-primary">update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<% include partials/footer2 %>

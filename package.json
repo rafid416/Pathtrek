@@ -1,0 +1,41 @@
+{
+  "name": "finalproject",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cloudinary": "^1.14.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "ejs-lint": "^0.3.0",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "gridfs-stream": "^1.1.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "method-override": "^3.0.0",
+    "missing": "0.0.1",
+    "moment": "^2.24.0",
+    "mongodb": "^3.3.0-beta2",
+    "mongoose": "^5.6.7",
+    "monk": "^7.0.0",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^3.3.0",
+    "node-geocoder": "^3.23.0",
+    "nodemailer": "^6.3.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

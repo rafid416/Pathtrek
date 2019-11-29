@@ -1,0 +1,42 @@
+<% include partials/header3 %>
+
+
+    <div class="lcred">
+      <div class='text-center text-white mt-5'>
+        <h1 class="font-weight-bold">Login</h1>
+      </div>
+      <form class="needs-validation m-5" action="/login" method="POST" novalidate>
+        <div class="form-row justify-content-center">
+          <div class="col-sm-6 mb-3">
+            <input type="text" class="form-control" id="validationCustom04" name="username" placeholder="username" required>
+            <div class="invalid-feedback">
+              Please provide a valid username.
+            </div>
+          </div>
+        </div>
+        <div class="form-row justify-content-center">
+          <div class="col-sm-6 mb-3">
+            <input type="email" class="form-control" id="validationCustom04" name="email" placeholder="email" required>
+            <div class="invalid-feedback">
+              Please provide a valid email.
+            </div>
+          </div>
+        </div>
+        <div class="form-row justify-content-center">
+          <div class="col-sm-6 mb-3">
+            <input type="password" class="form-control" id="validationCustom03" minlength="3" name="password" placeholder="password" required>
+            <div class="invalid-feedback">
+              Please provide a valid password.
+            </div>
+          </div>
+        </div>
+        <div class="form-row justify-content-center text-right  ">
+          <div class="col-sm-6 mb-3">
+            <button class="btn btn-success btn-block btn-lg" type="submit">Sign In</button>
+          </div> 
+        </div> 
+      </form>
+    </div>
+
+
+<% include partials/footer2 %>

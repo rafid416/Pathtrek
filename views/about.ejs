@@ -1,0 +1,97 @@
+<% include partials/header4 %>
+
+    <div class="bgimg1">
+        <div class="jumbotron jumbotron-fluid aboutjumbo">
+            <div class="container">
+                <h1 class="display-4">About PathTrek</h1>
+                <p class="lead">We are a UNESCO destinations rating website, where users can create, view and comment on other members posts.</p>
+            </div>
+        </div>
+    </div>
+    <div class="container py-4 ">
+        <p class="h2 text-center text-dark mb-5">Top destinations selected by you</p>
+        <div class="row text-center justify-content-around">
+            <div class="col-lg-2 col-sm-6 colspace">
+                <div class="card">
+                    <img src="/images/angkorcam.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title h6">Angkor</h5>
+                        <a href="/destinations" class="btn btn-sm btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+                <div class="card" >
+                    <img src="/images/baganmyan.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title h6">Bagan</h5>
+                        <a href="/destinations" class="btn btn-sm btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+                <div class="card" >
+                    <img src="/images/venice.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title h6">Venice</h5>
+                        <a href="/destinations" class="btn btn-sm btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+                <div class="card" >
+                    <img src="/images/grandcanyon.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title h6">Grand Canyon</h5>
+                        <a href="/destinations" class="btn btn-sm btn-primary">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bgimg2">
+        <div class="jumbotron jumbotron-fluid mb-0 bg-none aboutjumbo">
+            <div class="container text-center">
+                <h1 class="lead aboutcontact mb-3 display-4">Get in touch with us</h1>
+                <p class="mb-4">Want to know more about us? We would be happy to hear from you!</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Contact Us
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content" style="background-color: aliceblue;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">We'd love to hear from you!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/about" method="POST">
+                <div class="modal-body">
+                    <input type="text" class="mb-2"placeholder="Name" name='name' required style="width:100%;"><br>
+                    <input type="email" class="mb-2"placeholder="email" name='email' required style="width:100%;"><br>
+                    <textarea  class="mb-2" placeholder="Your message" name='message' required style="width:100%;"></textarea>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" name="submit" class="btn btn-primary">Send</button>
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+    <section class="connect" >
+        <h4 class="connectedtext ">STAY CONNECTED</h4>
+        <div class="icons ">
+            <a href="http://www.twitter.com" target="_blank" ><i class="fab fa-twitter-square "></i></a>
+            <a href="http://www.facebook.com" target="_blank"><i class="fab fa-facebook-square "></i></a>
+            <a href="http://www.instagram.com" target="_blank"><i class="fab fa-instagram "></i></a>         
+        </div> 
+    </section>
+    <div class="bgimg3">
+    </div>
+
+    <% include partials/footer1 %>

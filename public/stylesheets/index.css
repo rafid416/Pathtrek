@@ -1,0 +1,184 @@
+.index{
+    background: url("/images/machupichu.jpg");
+    background-position: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.mainwrap{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mainwrap h1{
+    font-size: 60px;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+.mainwrap button{
+    color: white;
+    
+}
+
+.navbar-nav{
+    position: relative;
+}
+.navbar-nav li{
+    padding: 0px 7px;
+}
+.navbar-nav .nav-item .nav-link{
+    color: rgb(55,35,177)!important;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+.nav-item:hover .nav-link{
+    transform: scale(1.1);
+}
+.bgimg1 {
+    background-image: url('/images/plitvicecro.jpg');
+    min-height: 100vh;
+}
+.bgimg1, .bgimg2, .bgimg3{
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.aboutjumbo{
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    background: rgba(65, 66, 66, 0.6);
+    margin-bottom: 0;
+}
+.aboutjumbo h1,p{
+    font-weight: 600!important;
+    color: white;
+}
+.card-body{
+    padding: 0.5em!important;
+}
+.card-title{
+    font-size: 1em;
+    line-height: 1.1em;
+    height: 2.3em;
+    overflow: hidden;
+    margin-bottom: 0.5em;
+}
+.bgimg2{
+    background-image: url('/images/mountfujijapan.jpg');
+    min-height: 700px;
+}
+.bgimg3{
+    background-image: url('/images/oldhavana.jpg');
+    min-height: 400px;
+}
+.connectedtext{
+    font-size: 1.2em;
+}  
+.connect{
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    display: block;
+    padding: 30px;
+}
+.fab {
+    font-size: 1.5em;
+    margin: 5px 10px;
+    color: black;
+}
+.fab:hover{
+    color:grey;
+}
+
+a{
+    text-decoration: none!important;
+    color: white;
+}
+.destjumbo{
+    background: url('/images/petra.jpg');
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 0;
+    height: 20%;
+    text-align: center;
+    color: white;
+    border-radius: 0;
+}
+.destjumbo div{
+    margin-top: 15%;
+    margin-bottom: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+    background: rgba(65, 66, 66, 0.4);
+}
+.destjumbo p {
+    margin-bottom: 15px;
+    font-size: 21px;
+    font-weight: 200;
+}
+.destjumbo h1{
+    font-size: 64px;
+}
+.colspace{
+    margin-bottom: 20px;
+}
+.navbar{
+    height: 70px;
+    position: fixed;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.98)!important;
+    z-index: 100;
+    top: 0;
+}
+.cred{
+    background: linear-gradient(to left, #283048 , #859398);
+}
+.credfoot{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.h1log{
+    margin-top: 10%;
+}
+.pcont, .dacont, .adestcont, .scred{
+    margin-top: 100px;
+}
+.lcred{
+    margin-top: 70px;
+}
+.pcont p, .dacont p, h4{
+    color: black;
+}
+.dacont p{
+    font-weight: 400!important;
+}
+.adest{
+    background: linear-gradient(to left, #283048 , #859398);
+}
+.navbar-nav .nav-item .usertext{
+    color: green!important;
+}
+.container .alert{
+    margin-top: 100px;
+}
+@media only screen and (max-width: 767px){
+    .navbar-collapse{
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.98)!important;
+    }
+}
+

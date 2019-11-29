@@ -1,0 +1,24 @@
+
+<% include partials/header2 %>
+
+    <div class="container adestcont">
+        <h1 class="text-center my-5">Add new comment to <%= destination.name %> </h1>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-8">
+                <form action="/destinations/<%=destination._id%>/comments" method="POST">
+                    <div class="form-group">
+                        <input class="form-control py-3" type="text" name="comment[text]" placeholder="enter your comment">
+                    </div>
+                    <%# <div class="form-group">
+                        <input class="form-control" type="text" name="comment[author]" placeholder="name">
+                    </div> %>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary btn-block">Submit</button>
+                    </div>
+                </form>
+                <a href="/destinations/<%=destination._id%>" class="">Go Back</a>
+            </div>
+        </div>
+    </div>
+
+    <% include partials/footer2 %>

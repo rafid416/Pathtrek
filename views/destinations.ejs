@@ -1,0 +1,30 @@
+
+<% include partials/header4 %>
+
+    <div class="jumbotron destjumbo px-0 mb-5">
+        <div>
+            <h1 class="text">Discover PathTrek</h1>
+            <p>Explore the best picked UNESCO World Heritage Sites around the world.</p>
+            <p>
+                <a href="/destinations/new" class="btn btn-primary btn-lg">Add New Destination</a>
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row text-center justify-content-start">
+            <%destinations.forEach(function(destination) { %>
+            <div class="col-lg-3 col-sm-6 colspace">
+                <div class="card">
+                    <img src="<%= destination.image %>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= destination.name %></h5>
+                        <a href="/destinations/<%= destination._id %>" class="btn btn-primary">More Info</a>
+                    </div>
+                </div>                   
+            </div>
+            <% }); %>
+        </div>
+    </div>
+
+
+<% include partials/footer1 %>

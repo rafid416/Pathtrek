@@ -1,0 +1,92 @@
+<% include partials/header2 %>
+
+<p></p>
+    <div class="container dacont">
+        <div class="row destination">
+            <div class="col-md-8 mt-5 newrow "> 
+                <div class="card card-body" style="padding:0!important;border:unset;">
+                    <img src="<%= destination.image %>" class="card-img-top mb-4" alt="...">
+                    <div class="caption-full p-2">
+                        <p><%= destination.description %></p>
+                        <p class="text-info"><em><strong> Submitted by <%= destination.author.username %> </strong>, <%= moment(destination.createdAt).fromNow() %></em></p>
+                    </div><br>
+                    <div class="text-right p-2">
+                        <%if (currentUser && destination.author.id.equals(currentUser._id)){ %>
+                        <a href="/destinations/<%=destination._id%>/edit" class="mr-2 btn btn-sm  btn-warning float-left" >
+                            Edit
+                        </a>
+                        <form action="/destinations/<%=destination._id%>?_method=DELETE" method="POST">
+                            <button class="btn btn-sm btn-danger float-left">Delete</button>   
+                        </form>
+                        <% } %>
+                        <% if (currentUser){%>
+                        <a href="/destinations/<%=destination._id%>/comments/new" class="btn btn-primary" >
+                            Add New Comment
+                        </a>
+                        <% } %>
+                    </div>
+               
+                </div>
+                <hr class="bg-white">
+                <div class="caption-full card card-body mb-5">
+                    <p class="m-0"><em>Comments:</em></p><br>
+                    <% destination.comments.forEach(function(comment){ %>
+                    <div class="row">
+                        <div class="col-9">
+                            <p><%= comment.text %></p>
+                        </div>
+                        <div class=col-3>
+                            <p class="mb-0"><em><strong><%= comment.author.username %></strong></em></p>
+                            <div class="row">
+                                <div class="col-12">
+                                <small><em><%= moment(comment.createdAt).fromNow() %></em></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <% }) %>
+                   
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p class="h3 my-5 text-white"><%= destination.name %></p>
+                <div class="list-group">
+                    <li class="list-group-item">
+                        <h4>Location:</h4>
+                        <div id='map' style="height:400px;width:100%;"></div>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+  function initMap() {
+    var lat = <%= destination.lat %>;
+    var lng = <%= destination.lng %>;
+    var center = {lat: lat, lng: lng };
+    var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 8,
+        center: center,
+        scrollwheel: false
+    });
+    var contentString = `
+      <strong><%= destination.name %><br />
+      <%= destination.location %></strong>
+      <p><%= destination.description %></p>
+    `
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    var marker = new google.maps.Marker({
+        position: center,
+        map: map
+    });
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyANUIaM4j2NehfqsQx1Gii5CKchaFpSXQc&callback=initMap"></script>
+    
+<% include partials/footer3 %>
