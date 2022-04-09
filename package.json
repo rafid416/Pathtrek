@@ -22,7 +22,7 @@
     "jade": "~1.11.0",
     "method-override": "^3.0.0",
     "missing": "0.0.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "mongodb": "^3.3.0-beta2",
     "mongoose": "^5.7.12",
     "monk": "^7.0.0",
